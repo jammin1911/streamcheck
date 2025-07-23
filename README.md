@@ -1,47 +1,52 @@
-StreamCheck 
+# StreamCheck
 
-PowerShell script to analyze video streams from an m3u_plus playlist by measuring bitrate, resolution, and FPS using ffmpeg and ffprobe. 
-Requirements 
+PowerShell script to analyze video streams from an m3u_plus playlist by measuring bitrate, resolution, and FPS using `ffmpeg` and `ffprobe`.
 
-    Windows PowerShell 5.1
-    ffmpeg.exe and ffprobe.exe placed in the .\bin folder relative to the script
-    Execution policy that allows running unsigned scripts (e.g., RemoteSigned or Bypass)
-     
+## Requirements
 
-Usage 
-powershell
- 
- 
- 
-1
+- Windows PowerShell 5.1  
+- `ffmpeg.exe` and `ffprobe.exe` placed in the `.\bin` folder relative to the script  
+- Execution policy that allows running unsigned scripts (e.g., `RemoteSigned` or `Bypass`)
+
+## Usage
+
+```powershell
 .\streamcheck.ps1 -m3u <path_to_playlist.m3u> [-DurationSeconds <seconds>]
- 
- 
+```
+- m3u (required): Path to the m3u_plus playlist file  
+- DurationSeconds (optional): Number of seconds to test each stream (default 6 seconds)
 
-    -m3u (required): Path to the m3u_plus playlist file
-    -DurationSeconds (optional): Number of seconds to test each stream (default 6 seconds)
+## Output 
+
+For each channel, the script displays: 
+
+- Channel Name  
+- Channel Group (from group-title attribute)  
+- Bitrate in kbps with captured file size  
+- Video Resolution (width×height)  
+- Video FPS
      
-
-Example: 
-powershell
- 
- 
- 
-1
-.\streamcheck.ps1 -m3u "C:\Playlists\channels.m3u" -DurationSeconds 6
- 
- 
-Output 
-
-For each channel, outputs: 
-
-    Channel Name
-    Channel Group (from group-title attribute)
-    Bitrate in kbps with captured file size
-    Video Resolution (width×height)
-    Video FPS
-     
-
 Errors for unavailable streams are clearly indicated. 
 
-Feel free to contribute or raise issues. 
+Contributions and issue reports are welcome!
+
+## Sample Output
+
+```
+###########################################
+SUMMARY:
+Total Number of Streams Tested: 75
+Total Number of Working Streams: 68
+Total Number of Streams with Errors: 7
+
+Stream Count by Resolution and FPS:
+1280x720 @ 60FPS = 21 (Average Bitrate: 3750 kbps)
+1920x1080 @ 60FPS = 16 (Average Bitrate: 4850 kbps)
+1280x720 @ 30FPS = 12 (Average Bitrate: 2140 kbps)
+1920x1080 @ 30FPS = 8 (Average Bitrate: 3080 kbps)
+640x360 @ 30FPS = 5 (Average Bitrate: 850 kbps)
+1920x1080 @ 59.94FPS = 4 (Average Bitrate: 5020 kbps)
+960x540 @ 30FPS = 2 (Average Bitrate: 1150 kbps)
+
+###########################################
+```
