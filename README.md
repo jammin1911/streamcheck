@@ -35,6 +35,23 @@ Contributions and issue reports are welcome!
 ## Sample Output
 
 ```
+Channel Name: World News Channel
+Channel Group: News
+Channel Bitrate: 2345 kbps (17.18 MB in 12s)
+Resolution: 1280x720
+FPS: 29.97
+
+Channel Name: SPORT CHANNEL HD
+Channel Group: Sports
+Channel Bitrate: 4523 kbps (32.96 MB in 12s)
+Resolution: 1920x1080
+FPS: 59.94
+
+Downloading Stream.
+Channel Name: Ghost Channel
+Channel Group: Classic
+Error: Stream Unavailable
+
 ###########################################
 SUMMARY:
 Total Number of Streams Tested: 75
