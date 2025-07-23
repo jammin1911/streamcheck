@@ -1,5 +1,7 @@
 # StreamCheck
 
+DISCLAIMER: THIS PROJECT WAS CREATED 100% USING AI. I DO NOT KNOW HOW TO CODE :)
+
 PowerShell script to analyze video streams from an m3u_plus playlist by measuring bitrate, resolution, and FPS using `ffmpeg` and `ffprobe`.
 
 ## Requirements
