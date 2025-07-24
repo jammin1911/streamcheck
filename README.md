@@ -12,6 +12,11 @@ PowerShell script to analyze video streams from an m3u_plus playlist by measurin
 
 ## Usage
 
+- Give the unsigned script permission to run
+```powershell
+Unblock-File -Path ".\streamcheck.ps1"
+```
+
 ```powershell
 .\streamcheck.ps1 -m3u <path_to_playlist.m3u> [-DurationSeconds <seconds>]
 ```
